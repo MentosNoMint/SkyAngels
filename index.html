@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    screens: {
+                        sssm: "300px",
+                        ssm: "400px",
+                        sm: "640px",
+                        md: "768px",
+                        lg: "1024px",
+                        xl: "1280px",
+                        xll: "1536px",
+                        xlll: "1920px",
+                    },
+                    extend: {
+                        colors: {
+                            clifford: "#da373d",
+                            grayText: "#7f7f7f",
+                        },
+                    },
+                },
+            }
+        </script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .overF {
+                    overflow: hidden;
+                }
+            }
+            @layer base {
+                * {
+                    @apply m-0 p-0 box-border font-['Jost'];
+                }
+
+                .wrapper {
+                    @apply min-h-full overF flex flex-col;
+                }
+                body,
+                html {
+                    height: 100%;
+                }
+            }
+            @layer components {
+                .btnShadow {
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                }
+            }
+        </style>
+        <title>Sky Angels</title>
+    </head>
+    <body>
+        <div class="wrapper w-full ">
+            <div class="w-full h-full bg-[#0059DF] h-screen scroll-smooth">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer">
+                        <img src="/img/logo.svg" alt="Logo" />
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center">
+                            <p
+                                class="text-white text-[20px] font-medium cursor-pointer"
+                            >
+                                Регистрация на рейс
+                            </p>
+                            <div
+                                class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"
+                            ></div>
+                        </div>
+
+                        <div class="flex flex-col items-center">
+                            <p
+                                class="text-white text-[20px] font-medium cursor-pointer"
+                            >
+                                Поиск
+                            </p>
+                            <div
+                                class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"
+                            ></div>
+                        </div>
+
+                        <div class="flex flex-col items-center">
+                            <p
+                                class="text-white text-[20px] font-medium cursor-pointer"
+                            >
+                                Личный кабинет
+                            </p>
+                            <div
+                                class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"
+                            ></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex items-start justify-between">
+                    <div class="flex flex-col max-w-[535px] ml-[92px] mt-[100px]">
+                        <span class="text-white font-bold text-[48px]"
+                            >Летайте выше с нами!</span
+                        >
+                        <div
+                            class="max-w-[527px] h-[2px] w-full bg-white mt-[10px]"
+                        ></div>
+                        <span class="text-white font-bold text-[16px] mt-[28px]"
+                            >Наша авиакомпания предлагает широкий спектр услуг
+                            для комфортного и безопасного полета. Мы гарантируем
+                            высокое качество обслуживания, низкие цены и большой
+                            выбор направлений. Летайте с нами и откройте для
+                            себя новые горизонты!</span
+                        >
+                        <div
+                            class="h-[72px] max-w-[226px] w-full bg-white rounded-[33px] flex items-center justify-center mt-[53px] cursor-pointer"
+                            id="btnShadow"
+                        >
+                            <span class="text-[#0059DF] text-[24px] font-bold"
+                                >В путь!</span
+                            >
+                        </div>
+                    </div>
+
+                    <div class="flex max-w-[1000px] mt-[50px]">
+                        <img class="" src="/img/logo-new.svg" alt="" />
+                    </div>
+                </main>
+            </div>
+
+            <div class="bg-white flex flex-col w-full h-screen " id="Block">
+                <main class="flex flex-col h-full">
+                    <div class="flex justify-center mt-[83px] items-center">
+                        <div class="flex max-w-[724px]">
+                            <div class="flex flex-col max-w-[724px]">
+                                <span class="text-[#0059DF] text-[45px]"
+                                    >Почему именно мы?</span
+                                >
+                                <div
+                                    class="h-[2px] w-[365px] bg-[#0059DF]"
+                                ></div>
+                                <span
+                                    class="max-w-[724px] text-[20px] font-light text-[#0059DF]"
+                                    >Наша авиакомпания предлагает
+                                    комфортабельные самолеты, профессиональный
+                                    экипаж и широкий выбор направлений. Мы
+                                    постоянно работаем над улучшением качества
+                                    сервиса и гарантируем безопасность и
+                                    надежность полетов.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="ml-[76px]">
+                            <img src="/img/main-design.svg" alt="Photo" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center mt-[66px]">
+                        <div>
+                            <span class="text-[64px] font-light text-[#0059DF]"
+                                >Попробуйте сами!</span
+                            >
+                        </div>
+                        <div
+                            class="max-w-[346px] w-full h-[2px] bg-[#0059DF]"
+                        ></div>
+                    </div>
+
+                    <div class="flex flex-col items-center mt-[44px]">
+                        <div class="flex gap-[41px]">
+                            <div class="flex flex-col items-center">
+                                <span
+                                    class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                    >Купить билеты</span
+                                >
+                                <div
+                                    class="h-[1px] w-[123px] bg-[#0059DF]"
+                                ></div>
+                            </div>
+                            <span
+                                class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                >Управление билетами</span
+                            >
+                            <span
+                                class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                >Зарегистрироваться на рейс</span
+                            >
+                            <span
+                                class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                >Расчитать цену</span
+                            >
+                        </div>
+
+                        <div
+                            class="h-[91px] max-w-[1033px] flex justify-center w-full mt-[33px]"
+                        >
+                            <div
+                                class="flex max-w-[371px] w-full bg-[#0059DF] h-full opacity-70 items-center justify-center gap-[26px]"
+                            >
+                                <div>
+                                    <span
+                                        class="text-white text-[24px] font-medium cursor-pointer"
+                                        >Сургут</span
+                                    >
+                                </div>
+                                <div class="cursor-pointer">
+                                    <img
+                                        src="/img/change-city.svg"
+                                        alt="City"
+                                    />
+                                </div>
+                                <div>
+                                    <span
+                                        class="text-white text-[24px] font-medium cursor-pointer"
+                                        >Москва</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="w-[2px] h-[91px] bg-[#7eb0fc] opacity-50"
+                            ></div>
+
+                            <div
+                                class="flex max-w-[257px] w-full h-full bg-[#0059DF] opacity-70 items-center justify-center"
+                            >
+                                <span
+                                    class="text-white text-[24px] font-medium cursor-pointer"
+                                    >22 ноября</span
+                                >
+                            </div>
+
+                            <div
+                                class="w-[2px] h-[91px] bg-[#7eb0fc] opacity-50"
+                            ></div>
+
+                            <div
+                                class="flex max-w-[255px] w-full h-full bg-[#0059DF] opacity-70 items-center justify-center"
+                            >
+                                <span
+                                    class="text-white text-[24px] font-medium cursor-pointer"
+                                    >1 пассажир</span
+                                >
+                            </div>
+
+                            <div
+                                class="w-[2px] h-[91px] bg-[#7eb0fc] opacity-50"
+                            ></div>
+
+                            <div
+                                class="flex max-w-[150px] w-full h-full bg-[#0059DF] opacity-50 items-center justify-center"
+                            >
+                                <span
+                                    class="text-white text-[24px] font-medium cursor-pointer"
+                                    >Найти</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex h-full items-end justify-center w-full">
+                        <div class="flex max-w-[1033px] w-full justify-between">
+                            <div>
+                                <span
+                                    class="text-[20px] text-[#0059DF] font-extralight cursor-pointer"
+                                    >Личный кабинет</span
+                                >
+                            </div>
+                            <div>
+                                <span class="text-[20px] text-[#0059DF] font-extralight cursor-pointer">Поиск</span>
+                            </div>
+                            <div>
+                                <span class="text-[20px] text-[#0059DF] font-extralight cursor-pointer">Регистрация на рейс </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-[16px] text-[#0059DF] font-extralight">+7 (909) 876 2468</span>
+                                <div
+                                    class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                                ></div>
+                                <span class="text-[16px] text-[#0059DF] font-extralight">SkyAngel@lines.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>

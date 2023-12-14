@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    sssm: "300px",
+                    ssm: "400px",
+                    sm: "640px",
+                    md: "768px",
+                    lg: "1024px",
+                    xl: "1280px",
+                    xll: "1536px",
+                    xlll: "1920px",
+                },
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                        grayText: "#7f7f7f",
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .overF {
+                overflow: hidden;
+            }
+        }
+        @layer base {
+            * {
+                @apply m-0 p-0 box-border font-['Jost'];
+            }
+
+            .wrapper {
+                @apply min-h-full overF flex flex-col w-full h-full;
+            }
+            body,
+            html {
+                height: 100%;
+            }
+        }
+        @layer components {
+            .btnShadow {
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+            #btnYellow {
+                border-radius: 12px;
+border: 1px solid #FFD706;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="bg-[#0059DF] w-full h-full">
+            <header class="flex justify-between items-center">
+                <div class="mt-[28px] ml-[15px] cursor-pointer">
+                    <img class="max-w-[175px] max-h-[86px]" src="/img/logo.svg" alt="Logo" />
+                </div>
+                <div class="flex gap-[63px] mr-[66px]">
+                    <div class="flex flex-col items-center">
+                        <p class="text-white text-[20px] font-medium cursor-pointer">
+                            Регистрация на рейс
+                        </p>
+                        <div class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"></div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <p class="text-white text-[20px] font-medium cursor-pointer">
+                            Поиск
+                        </p>
+                        <div class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"></div>
+                    </div>
+
+                    <div class="flex flex-col items-center">
+                        <p class="text-white text-[20px] font-medium cursor-pointer">
+                            Личный кабинет
+                        </p>
+                        <div class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"></div>
+                    </div>
+                </div>
+            </header>
+            <main class="flex w-full h-full justify-center">
+                <div
+                    class="flex bg-white max-w-[1210px] h-[565px] w-full h-full rounded-[68px] mt-[76px] flex-col items-center">
+                    <div class="flex w-full justify-start">
+                        <div class="flex ml-[44px] mt-[38px]">
+                            <span class="text-[#0059DF] font-normal text-[40px]">Сургут --- Москва</span>
+                        </div>
+                    </div>
+
+                    <div class="flex bg-[#0059DF] max-w-[1042px] h-[95px] rounded-[16px] h-full w-full mt-[46px]">
+
+                        <div class="flex w-full items-center justify-between">
+                            <div class="flex flex-col ml-[19px]">
+                                <span class="text-white font-light text-[15px]">22 ноября</span>
+                                <span class="text-white font-normal text-[24px]">Рейс 68</span>
+                                <div class="flex items-center">
+                                    <span class="text-[#ADADAD] font-normal text-[12px]">Воздушное судно:</span>
+                                    <span class="text-white font-normal text-[11px]">AirBus 200</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-white font-[400px] text-[24px]">20:00 ---------------- 2ч.30мин
+                                    ---------------- 22:30</span>
+                            </div>
+
+                            <div class="flex bg-white max-w-[262px] h-[56px] rounded-[13px] w-full items-center ml-[16px] mr-[31px]">
+                                <div class="flex flex-col ml-[10px]">
+                                    <span class="text-[#0E3877] text-[16px] font-medium">Стоимость: 24$</span>
+                                    <span class="text-[#0E3877] text-[14px] font-medium">Вероятность: 28%</span>
+                                </div>
+                                <div class="flex max-w-[117px] h-[32px] w-full items-center justify-center ml-[10px] cursor-pointer" id="btnYellow">
+                                    <span class="text-[#FFD706] font-extrabold">Выбрать</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>       
+                    
+                    
+
+                    <div class="flex bg-[#0059DF] max-w-[1042px] h-[95px] rounded-[16px] h-full w-full mt-[46px]">
+
+                        <div class="flex w-full items-center justify-between">
+                            <div class="flex flex-col ml-[19px]">
+                                <span class="text-white font-light text-[15px]">22 ноября</span>
+                                <span class="text-white font-normal text-[24px]">Рейс 68</span>
+                                <div class="flex items-center">
+                                    <span class="text-[#ADADAD] font-normal text-[12px]">Воздушное судно:</span>
+                                    <span class="text-white font-normal text-[11px]">AirBus 200</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-white font-[400px] text-[24px]">20:00 ---------------- 2ч.30мин
+                                    ---------------- 22:30</span>
+                            </div>
+
+                            <div class="flex bg-white max-w-[262px] h-[56px] rounded-[13px] w-full items-center ml-[16px] mr-[31px]">
+                                <div class="flex flex-col ml-[10px]">
+                                    <span class="text-[#0E3877] text-[16px] font-medium">Стоимость: 24$</span>
+                                    <span class="text-[#0E3877] text-[14px] font-medium">Вероятность: 28%</span>
+                                </div>
+                                <div class="flex max-w-[117px] h-[32px] w-full items-center justify-center ml-[10px] cursor-pointer" id="btnYellow">
+                                    <span class="text-[#FFD706] font-extrabold">Выбрать</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                    
+                    <div class="flex bg-[#0059DF] max-w-[1042px] h-[95px] rounded-[16px] h-full w-full mt-[46px]">
+
+                        <div class="flex w-full items-center justify-between">
+                            <div class="flex flex-col ml-[19px]">
+                                <span class="text-white font-light text-[15px]">22 ноября</span>
+                                <span class="text-white font-normal text-[24px]">Рейс 68</span>
+                                <div class="flex items-center">
+                                    <span class="text-[#ADADAD] font-normal text-[12px]">Воздушное судно:</span>
+                                    <span class="text-white font-normal text-[11px]">AirBus 200</span>
+                                </div>
+                            </div>
+                            <div>
+                                <span class="text-white font-[400px] text-[24px]">20:00 ---------------- 2ч.30мин
+                                    ---------------- 22:30</span>
+                            </div>
+
+                            <div class="flex bg-white max-w-[262px] h-[56px] rounded-[13px] w-full items-center ml-[16px] mr-[31px]">
+                                <div class="flex flex-col ml-[10px]">
+                                    <span class="text-[#0E3877] text-[16px] font-medium">Стоимость: 24$</span>
+                                    <span class="text-[#0E3877] text-[14px] font-medium">Вероятность: 28%</span>
+                                </div>
+                                <div class="flex max-w-[117px] h-[32px] w-full items-center justify-center ml-[10px] cursor-pointer" id="btnYellow">
+                                    <span class="text-[#FFD706] font-extrabold">Выбрать</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+
+                </div>
+
+
+
+                
+            </main>
+        </div>
+        <footer class="flex h-full justify-end bg-[#0059DF]">
+            <div class="flex h-full items-end justify-center w-full">
+                <div class="flex max-w-[1033px] w-full justify-between">
+                    <div>
+                        <span
+                            class="text-[20px] text-white font-extralight cursor-pointer"
+                            >Личный кабинет</span
+                        >
+                    </div>
+                    <div>
+                        <span class="text-[20px] text-white font-extralight cursor-pointer">Поиск</span>
+                    </div>
+                    <div>
+                        <span class="text-[20px] text-white font-extralight cursor-pointer">Регистрация на рейс </span>
+                    </div>
+                    <div class="flex">
+                        <span class="text-[16px] text-white font-extralight">+7 (909) 876 2468</span>
+                        <div
+                            class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                        ></div>
+                        <span class="text-[16px] text-white font-extralight">SkyAngel@lines.com</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
