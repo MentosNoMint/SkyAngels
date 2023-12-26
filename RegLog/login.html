@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                screens: {
+                    sssm: "300px",
+                    ssm: "400px",
+                    sm: "640px",
+                    md: "768px",
+                    lg: "1024px",
+                    xl: "1280px",
+                    xll: "1536px",
+                    xlll: "1920px",
+                },
+                extend: {
+                    colors: {
+                        clifford: "#da373d",
+                        grayText: "#7f7f7f",
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .overF {
+                overflow: hidden;
+            }
+        }
+        @layer base {
+            * {
+                @apply m-0 p-0 box-border font-['Jost'];
+            }
+
+            .wrapper {
+                @apply min-h-full overF flex flex-col h-full;
+            }
+            body,
+            html {
+                height: 100%;
+            }
+        }
+        @layer components {
+            .btnShadow {
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+            #btnShadow {
+                box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <main class="w-full h-full flex justify-center items-center bg-[#0059DF]">
+
+            <div class="max-w-[500px] w-full h-[500px] bg-white rounded-[20px] flex flex-col items-center">
+                <div class="flex justify-center w-full my-[48px]">
+                    <h1 class="text-[28px] text-[#0059DF] font-light">Войти</h1>
+                </div>
+
+                <div class="flex flex-col w-full items-center ">
+                    <div class="flex justify-center">
+                        <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                            <input type="text" name="" id="" placeholder="Телефон" class="text-center">
+                        </div>
+
+
+                    </div>
+
+                    <div class="h-[1px] max-w-[207px] bg-[#0059DF] w-full"></div>
+                </div>
+
+
+                <div class="flex flex-col w-full items-center mt-[50px]">
+                    <div class="flex justify-center">
+                        <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                            <input type="text" name="" id="" placeholder="Пароль" class="text-center">
+                        </div>
+
+
+                    </div>
+
+                    <div class="h-[1px] max-w-[207px] bg-[#0059DF] w-full"></div>
+                </div>
+
+
+
+
+                <div class="max-w-[306px] w-full h-[64px] bg-[#0059DF] rounded-[33px] mt-[58px] flex justify-center items-center cursor-pointer"
+                    id="btnShadow">
+                    <span class="text-[20px] text-white font-medium">Войти</span>
+                </div>
+
+                <div class="flex mt-[48px] justify-center items-center">
+                    <div class="h-[1px] w-[45px] bg-[#0059DF] opacity-70"></div>
+                    <span class="text-[10px] text-[#0059DF] font-light mx-[7px]">или</span>
+                    <div class="h-[1px] w-[45px] bg-[#0059DF] opacity-70"></div>
+                </div>
+
+                <div class="mt-[10px]">
+                    <span class="text-[#837676] text-[20px] font-extralight cursor-pointer">Не Зарегистрированы?</span>
+                </div>
+            </div>
+
+
+
+        </main>
+
+    </div>
+
+</body>
+
+</html>
