@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+            tailwind.config = {
+                theme: {
+                    screens: {
+                        sssm: "300px",
+                        ssm: "400px",
+                        sm: "640px",
+                        md: "768px",
+                        lg: "1024px",
+                        xl: "1280px",
+                        xll: "1536px",
+                        xlll: "1920px",
+                    },
+                    extend: {
+                        colors: {
+                            clifford: "#da373d",
+                            grayText: "#7f7f7f",
+                        },
+                    },
+                },
+            }
+        </script>
+        <style type="text/tailwindcss">
+            @layer utilities {
+                .overF {
+                    overflow: hidden;
+                }
+            }
+            @layer base {
+                * {
+                    @apply m-0 p-0 box-border font-['Jost'];
+                }
+
+                .wrapper {
+                    @apply min-h-full overF flex flex-col;
+                }
+                .wrapperAccountPage { 
+                    @apply min-h-full overF flex flex-col bg-[#0059DF] h-full;
+                }
+                body,
+                html {
+                    height: 100%;
+                }
+            }
+            @layer components {
+                .btnShadow {
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                }
+                
+                .btnShadowPage{
+                    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+                }
+                #btnYellow {
+                border-radius: 12px;
+                
+
+                
+border: 1px solid #FFD706;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+            }
+
+   
+
+            #loginPage{
+                background-color: black;
+            }
+            }
+        </style>
+        <title>Sky Angels</title>
+    </head>
+    
+
+
+    <body>
+        <div class="wrapper w-full " id="mainPage">
+            <div class="w-full h-full bg-[#0059DF] h-screen scroll-smooth">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer" onclick='changeScreen("MainPageOpen")'> 
+                        <img src="/img/logo.svg" alt="Logo" />
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center" id="RacePageOpen">
+                            <p
+                                class="text-white text-[20px] font-medium cursor-pointer" onclick='changeScreen("RacePageOpen")'
+                            >
+                                Регистрация на рейс
+                            </p>
+                            <div
+                                class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"
+                            ></div>
+                        </div>
+
+                        <div class="flex flex-col items-center">
+                            <p
+                                class="text-white text-[20px] font-medium cursor-pointer"
+                            >
+                                Поиск
+                            </p>
+                            <div
+                                class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"
+                            ></div>
+                        </div>
+
+                        <div class="flex flex-col items-center" id="accountOpen">
+                            <p
+                                class="text-white text-[20px] font-medium cursor-pointer" onclick='changeScreen("accountOpen")'
+                            >
+                                Личный кабинет
+                            </p>
+                            <div
+                                class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"
+                            ></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex items-start justify-between">
+                    <div class="flex flex-col max-w-[535px] ml-[92px] mt-[100px]">
+                        <span class="text-white font-bold text-[48px]"
+                            >Летайте выше с нами!</span
+                        >
+                        <div
+                            class="max-w-[527px] h-[2px] w-full bg-white mt-[10px]"
+                        ></div>
+                        <span class="text-white font-bold text-[16px] mt-[28px]"
+                            >Наша авиакомпания предлагает широкий спектр услуг
+                            для комфортного и безопасного полета. Мы гарантируем
+                            высокое качество обслуживания, низкие цены и большой
+                            выбор направлений. Летайте с нами и откройте для
+                            себя новые горизонты!</span
+                        >
+                        <div
+                            class="h-[72px] max-w-[226px] w-full bg-white rounded-[33px] flex items-center justify-center mt-[53px] cursor-pointer"
+                            id="btnShadowPage"
+                        >
+                            <span class="text-[#0059DF] text-[24px] font-bold"
+                                >В путь!</span
+                            >
+                        </div>
+                    </div>
+
+                    <div class="flex max-w-[1000px] mt-[50px]">
+                        <img class="" src="/img/logo-new.svg" alt="" />
+                    </div>
+                </main>
+            </div>
+
+            <div class="bg-white flex flex-col w-full h-screen " id="Block">
+                <main class="flex flex-col h-full">
+                    <div class="flex justify-center mt-[83px] items-center">
+                        <div class="flex max-w-[724px]">
+                            <div class="flex flex-col max-w-[724px]">
+                                <span class="text-[#0059DF] text-[45px]"
+                                    >Почему именно мы?</span
+                                >
+                                <div
+                                    class="h-[2px] w-[365px] bg-[#0059DF]"
+                                ></div>
+                                <span
+                                    class="max-w-[724px] text-[20px] font-light text-[#0059DF]"
+                                    >Наша авиакомпания предлагает
+                                    комфортабельные самолеты, профессиональный
+                                    экипаж и широкий выбор направлений. Мы
+                                    постоянно работаем над улучшением качества
+                                    сервиса и гарантируем безопасность и
+                                    надежность полетов.</span
+                                >
+                            </div>
+                        </div>
+                        <div class="ml-[76px]">
+                            <img src="/img/main-design.svg" alt="Photo" />
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col items-center mt-[66px]">
+                        <div>
+                            <span class="text-[64px] font-light text-[#0059DF]"
+                                >Попробуйте сами!</span
+                            >
+                        </div>
+                        <div
+                            class="max-w-[346px] w-full h-[2px] bg-[#0059DF]"
+                        ></div>
+                    </div>
+
+                    <div class="flex flex-col items-center mt-[44px]">
+                        <div class="flex gap-[41px]">
+                            <div class="flex flex-col items-center">
+                                <span
+                                    class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                    >Купить билеты</span
+                                >
+                                <div
+                                    class="h-[1px] w-[123px] bg-[#0059DF]"
+                                ></div>
+                            </div>
+                            <span
+                                class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                >Управление билетами</span
+                            >
+                            <span
+                                class="text-[24px] text-[#0059DF] font-normal cursor-pointer"   
+                                >Зарегистрироваться на рейс</span
+                            >
+                            <span
+                                class="text-[24px] text-[#0059DF] font-normal cursor-pointer"
+                                >Расчитать цену</span
+                            >
+                        </div>
+
+                        <div
+                            class="h-[91px] max-w-[1033px] flex justify-center w-full mt-[33px]"
+                        >
+                            <div
+                                class="flex max-w-[371px] w-full bg-[#0059DF] h-full opacity-70 items-center justify-center gap-[26px]"
+                            >
+                                <div>
+                                    <span
+                                        class="text-white text-[24px] font-medium cursor-pointer"
+                                        >Сургут</span
+                                    >
+                                </div>
+                                <div class="cursor-pointer">
+                                    <img
+                                        src="/img/change-city.svg"
+                                        alt="City"
+                                    />
+                                </div>
+                                <div>
+                                    <span
+                                        class="text-white text-[24px] font-medium cursor-pointer"
+                                        >Москва</span
+                                    >
+                                </div>
+                            </div>
+
+                            <div
+                                class="w-[2px] h-[91px] bg-[#7eb0fc] opacity-50"
+                            ></div>
+
+                            <div
+                                class="flex max-w-[257px] w-full h-full bg-[#0059DF] opacity-70 items-center justify-center"
+                            >
+                                <span
+                                    class="text-white text-[24px] font-medium cursor-pointer"
+                                    >22 ноября</span
+                                >
+                            </div>
+
+                            <div
+                                class="w-[2px] h-[91px] bg-[#7eb0fc] opacity-50"
+                            ></div>
+
+                            <div
+                                class="flex max-w-[255px] w-full h-full bg-[#0059DF] opacity-70 items-center justify-center"
+                            >
+                                <span
+                                    class="text-white text-[24px] font-medium cursor-pointer"
+                                    >1 пассажир</span
+                                >
+                            </div>
+
+                            <div
+                                class="w-[2px] h-[91px] bg-[#7eb0fc] opacity-50"
+                            ></div>
+
+                            <div
+                                class="flex max-w-[150px] w-full h-full bg-[#0059DF] opacity-50 items-center justify-center"
+                            >
+                                <span
+                                    class="text-white text-[24px] font-medium cursor-pointer"
+                                    >Найти</span
+                                >
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex h-full items-end justify-center w-full">
+                        <div class="flex max-w-[1033px] w-full justify-between">
+                            <div>
+                                <span
+                                    class="text-[20px] text-[#0059DF] font-extralight cursor-pointer"
+                                    >Личный кабинет</span
+                                >
+                            </div>
+                            <div>
+                                <span class="text-[20px] text-[#0059DF] font-extralight cursor-pointer">Поиск</span>
+                            </div>
+                            <div>
+                                <span class="text-[20px] text-[#0059DF] font-extralight cursor-pointer">Регистрация на рейс </span>
+                            </div>
+                            <div class="flex">
+                                <span class="text-[16px] text-[#0059DF] font-extralight">+7 (909) 876 2468</span>
+                                <div
+                                    class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                                ></div>
+                                <span class="text-[16px] text-[#0059DF] font-extralight">SkyAngel@lines.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+
+
+        <div class="wrapperAccountPage" id="accountPage">
+            <div class="bg-[#0059DF] w-full h-full">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer" id="MainPageOpen" onclick='changeScreen("MainPageOpen")'> 
+                        <img class="max-w-[175px] max-h-[86px]" src="/img/logo.svg" alt="Logo"/> 
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Регистрация на рейс
+                            </p>
+                            <div class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Поиск
+                            </p>
+                            <div class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center" id="account">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Личный кабинет
+                            </p>
+                            <div class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+                    </div>
+                </header>
+    
+                <main class="flex w-full h-full justify-center items-center">
+                    <div class="bg-white max-w-[812px] h-[598px] rounded-[80px] w-full border-radius-[3px] mt-[50px]">
+                        <div class="flex justify-between">
+                            <div class="flex flex-col mt-[22px] ml-[83px]">
+                                <span class="text-[#0059DF] font-medium text-[20px]">Кирилл Широков</span>
+                                <div class="bg-[#0059DF] max-w-[103px] h-[1px]"></div>
+                                <span class="text-[#0059DF] font-normal text-[14px]">Количество полетов:</span>
+                            </div>
+                            <div class="flex max-w-[93px] h-[27px] bg-[#0059DF] rounded-[33px] justify-center items-center w-full mt-[22px] mr-[50px] cursor-pointer"
+                                id="btnShadow">
+                                <span class="text-white text-[13px] font-bold">Выйти</span>
+                            </div>
+                        </div>
+    
+                        <div class=" flex justify-center w-full">
+                            <div class="flex flex-col">
+                                <span class="text-[#0059DF] font-semibold text-[24px]">Бронирования</span>
+                                <div class="max-w-[171px] w-full h-[1px] bg-[#0059DFCC] opacity-80 mt-[7px]"></div>
+                            </div>
+                        </div>
+    
+                        <div class="flex flex-col w-full  items-center mt-[43px]">
+                            <div class="bg-[#0059DF] rounded-[16px] max-w-[667px] h-[95px] w-full flex" id="btnShadow">
+                                <div class="flex flex-col ml-[27px] mt-[18px]">
+                                    <div>
+                                        <span class="text-[16px] font-medium text-white">FLIGHT01</span>
+                                        <span class="text-[14px] font-normal text-white">2 ноября</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[16px] font-semibold text-white">Внуково - Москва</span>
+                                    </div>
+                                </div>
+                                <div class="bg-[url('img/Design.svg')] max-w-[329px] w-full h-[86px] ml-[10px] mt-[9px]">
+                                    <span class="text-[14px] font-normal text-white">10:50</span>
+                                </div>
+                                <div class="flex flex-col ml-[10px] mt-[20px]">
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-[14px] font-normal text-white ">12:50</span>
+                                        <span class="text-[16px] font-semibold text-white">Surgut - Сургут</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="flex flex-col w-full  items-center mt-[43px]">
+                            <div class="bg-[#0059DF] rounded-[16px] max-w-[667px] h-[95px] w-full flex" id="btnShadow">
+                                <div class="flex flex-col ml-[27px] mt-[18px]">
+                                    <div>
+                                        <span class="text-[16px] font-medium text-white">FLIGHT01</span>
+                                        <span class="text-[14px] font-normal text-white">2 ноября</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[16px] font-semibold text-white">Внуково - Москва</span>
+                                    </div>
+                                </div>
+                                <div class="bg-[url('img/Design.svg')] max-w-[329px] w-full h-[86px] ml-[10px] mt-[9px]">
+                                    <span class="text-[14px] font-normal text-white">10:50</span>
+                                </div>
+                                <div class="flex flex-col ml-[10px] mt-[20px]">
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-[14px] font-normal text-white ">12:50</span>
+                                        <span class="text-[16px] font-semibold text-white">Surgut - Сургут</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        <div class="flex flex-col w-full  items-center mt-[43px]">
+                            <div class="bg-[#0059DF] rounded-[16px] max-w-[667px] h-[95px] w-full flex" id="btnShadow">
+                                <div class="flex flex-col ml-[27px] mt-[18px]">
+                                    <div>
+                                        <span class="text-[16px] font-medium text-white">FLIGHT01</span>
+                                        <span class="text-[14px] font-normal text-white">2 ноября</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-[16px] font-semibold text-white">Внуково - Москва</span>
+                                    </div>
+                                </div>
+                                <div class="bg-[url('img/Design.svg')] max-w-[329px] w-full h-[86px] ml-[10px] mt-[9px]">
+                                    <span class="text-[14px] font-normal text-white">10:50</span>
+                                </div>
+                                <div class="flex flex-col ml-[10px] mt-[20px]">
+                                    <div class="flex flex-col items-end">
+                                        <span class="text-[14px] font-normal text-white ">12:50</span>
+                                        <span class="text-[16px] font-semibold text-white">Surgut - Сургут</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+    
+            </div>
+            <footer class="flex h-full justify-end">
+                <div class="flex h-full items-end justify-center w-full">
+                    <div class="flex max-w-[1033px] w-full justify-between">
+                        <div>
+                            <span
+                                class="text-[20px] text-white font-extralight cursor-pointer"
+                                >Личный кабинет</span
+                            >
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Поиск</span>
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Регистрация на рейс </span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-[16px] text-white font-extralight">+7 (909) 876 2468</span>
+                            <div
+                                class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                            ></div>
+                            <span class="text-[16px] text-white font-extralight">SkyAngel@lines.com</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+
+        <div class="wrapperAccountPage" id="RegisterRacePage">
+            <div class="bg-[#0059DF] w-full h-full">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer" id="MainPageOpen" onclick='changeScreen("MainPageOpen")'>
+                        <img class="max-w-[175px] max-h-[86px]" src="/img/logo.svg" alt="Logo" />
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Регистрация на рейс
+                            </p>
+                            <div class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Поиск
+                            </p>
+                            <div class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Личный кабинет
+                            </p>
+                            <div class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex w-full h-full justify-center">
+                    <div
+                        class="flex bg-white max-w-[1210px] h-[565px] w-full h-full rounded-[68px] mt-[76px] flex-col items-center">
+                        <div class="flex w-full justify-start">
+                            <div class="flex ml-[44px] mt-[38px]">
+                                <span class="text-[#0059DF] font-normal text-[40px]">Сургут --- Москва</span>
+                            </div>
+                        </div>
+    
+                        <div class="flex bg-[#0059DF] max-w-[1042px] h-[95px] rounded-[16px] h-full w-full mt-[46px]">
+    
+                            <div class="flex w-full items-center justify-between">
+                                <div class="flex flex-col ml-[19px]">
+                                    <span class="text-white font-light text-[15px]">22 ноября</span>
+                                    <span class="text-white font-normal text-[24px]">Рейс 68</span>
+                                    <div class="flex items-center">
+                                        <span class="text-[#ADADAD] font-normal text-[12px]">Воздушное судно:</span>
+                                        <span class="text-white font-normal text-[11px]">AirBus 200</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-white font-[400px] text-[24px]">20:00 ---------------- 2ч.30мин
+                                        ---------------- 22:30</span>
+                                </div>
+    
+                                <div class="flex bg-white max-w-[262px] h-[56px] rounded-[13px] w-full items-center ml-[16px] mr-[31px]">
+                                    <div class="flex flex-col ml-[10px]">
+                                        <span class="text-[#0E3877] text-[16px] font-medium">Стоимость: 24$</span>
+                                        <span class="text-[#0E3877] text-[14px] font-medium">Вероятность: 28%</span>
+                                    </div>
+                                    <div class="flex max-w-[117px] h-[32px] w-full items-center justify-center ml-[10px] cursor-pointer" id="btnYellow" onclick='changeScreen("btnYellow")'>
+                                        <span class="text-[#FFD706] font-extrabold">Выбрать</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>       
+                        
+                        
+    
+                        <div class="flex bg-[#0059DF] max-w-[1042px] h-[95px] rounded-[16px] h-full w-full mt-[46px]">
+    
+                            <div class="flex w-full items-center justify-between">
+                                <div class="flex flex-col ml-[19px]">
+                                    <span class="text-white font-light text-[15px]">22 ноября</span>
+                                    <span class="text-white font-normal text-[24px]">Рейс 68</span>
+                                    <div class="flex items-center">
+                                        <span class="text-[#ADADAD] font-normal text-[12px]">Воздушное судно:</span>
+                                        <span class="text-white font-normal text-[11px]">AirBus 200</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-white font-[400px] text-[24px]">20:00 ---------------- 2ч.30мин
+                                        ---------------- 22:30</span>
+                                </div>
+    
+                                <div class="flex bg-white max-w-[262px] h-[56px] rounded-[13px] w-full items-center ml-[16px] mr-[31px]">
+                                    <div class="flex flex-col ml-[10px]">
+                                        <span class="text-[#0E3877] text-[16px] font-medium">Стоимость: 24$</span>
+                                        <span class="text-[#0E3877] text-[14px] font-medium">Вероятность: 28%</span>
+                                    </div>
+                                    <div class="flex max-w-[117px] h-[32px] w-full items-center justify-center ml-[10px] cursor-pointer" id="btnYellow" onclick='changeScreen("btnYellow")'>
+                                        <span class="text-[#FFD706] font-extrabold">Выбрать</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+                        
+                        <div class="flex bg-[#0059DF] max-w-[1042px] h-[95px] rounded-[16px] h-full w-full mt-[46px]">
+    
+                            <div class="flex w-full items-center justify-between">
+                                <div class="flex flex-col ml-[19px]">
+                                    <span class="text-white font-light text-[15px]">22 ноября</span>
+                                    <span class="text-white font-normal text-[24px]">Рейс 68</span>
+                                    <div class="flex items-center">
+                                        <span class="text-[#ADADAD] font-normal text-[12px]">Воздушное судно:</span>
+                                        <span class="text-white font-normal text-[11px]">AirBus 200</span>
+                                    </div>
+                                </div>
+                                <div>
+                                    <span class="text-white font-[400px] text-[24px]">20:00 ---------------- 2ч.30мин
+                                        ---------------- 22:30</span>
+                                </div>
+    
+                                <div class="flex bg-white max-w-[262px] h-[56px] rounded-[13px] w-full items-center ml-[16px] mr-[31px]">
+                                    <div class="flex flex-col ml-[10px]">
+                                        <span class="text-[#0E3877] text-[16px] font-medium">Стоимость: 24$</span>
+                                        <span class="text-[#0E3877] text-[14px] font-medium">Вероятность: 28%</span>
+                                    </div>
+                                    <div class="flex max-w-[117px] h-[32px] w-full items-center justify-center ml-[10px] cursor-pointer" id="btnYellow" onclick='changeScreen("btnYellow")'>
+                                        <span class="text-[#FFD706] font-extrabold">Выбрать</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
+    
+                    </div>
+    
+    
+    
+                    
+                </main>
+            </div>
+            <footer class="flex h-full justify-end bg-[#0059DF]">
+                <div class="flex h-full items-end justify-center w-full">
+                    <div class="flex max-w-[1033px] w-full justify-between">
+                        <div>
+                            <span
+                                class="text-[20px] text-white font-extralight cursor-pointer"
+                                >Личный кабинет</span
+                            >
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Поиск</span>
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Регистрация на рейс </span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-[16px] text-white font-extralight">+7 (909) 876 2468</span>
+                            <div
+                                class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                            ></div>
+                            <span class="text-[16px] text-white font-extralight">SkyAngel@lines.com</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <div class="wrapperAccountPage" id="loginPage">
+            <main class="w-full h-full flex justify-center items-center bg-[#0059DF]">
+    
+                <div class="max-w-[500px] w-full h-[500px] bg-white rounded-[20px] flex flex-col items-center">
+                    <div class="flex justify-center w-full my-[48px]">
+                        <h1 class="text-[28px] text-[#0059DF] font-light">Войти</h1>
+                    </div>
+    
+                    <div class="flex flex-col w-full items-center ">
+                        <div class="flex justify-center">
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Телефон" class="text-center">
+                            </div>
+    
+    
+                        </div>
+    
+                        <div class="h-[1px] max-w-[207px] bg-[#0059DF] w-full"></div>
+                    </div>
+    
+    
+                    <div class="flex flex-col w-full items-center mt-[50px]">
+                        <div class="flex justify-center">
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Пароль" class="text-center">
+                            </div>
+    
+    
+                        </div>
+    
+                        <div class="h-[1px] max-w-[207px] bg-[#0059DF] w-full"></div>
+                    </div>
+    
+    
+    
+    
+                    <div class="max-w-[306px] w-full h-[64px] bg-[#0059DF] rounded-[33px] mt-[58px] flex justify-center items-center cursor-pointer"
+                        id="btnShadow">
+                        <span class="text-[20px] text-white font-medium">Войти</span>
+                    </div>
+    
+                    <div class="flex mt-[48px] justify-center items-center">
+                        <div class="h-[1px] w-[45px] bg-[#0059DF] opacity-70"></div>
+                        <span class="text-[10px] text-[#0059DF] font-light mx-[7px]">или</span>
+                        <div class="h-[1px] w-[45px] bg-[#0059DF] opacity-70"></div>
+                    </div>
+    
+                    <div class="mt-[10px]" id="registerPageOpen">
+                        <span class="text-[#837676] text-[20px] font-extralight cursor-pointer">Не Зарегистрированы?</span>
+                    </div>
+                </div>
+    
+    
+    
+            </main>
+    
+        </div>
+
+
+
+        <div class="wrapperAccountPage" id="registerPage">
+            <main class="w-full h-full flex justify-center items-center bg-[#0059DF]">
+    
+                <div class="max-w-[500px] w-full h-[500px] bg-white rounded-[20px] flex flex-col items-center">
+                    <div class="flex justify-center w-full mt-[32px]">
+                        <h1 class="text-[28px] text-[#0059DF] font-light">Регистрация</h1>
+                    </div>
+    
+                    <div class="flex flex-col w-full items-center mt-[30px]">
+                        <div class="flex justify-center">
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Имя" class="text-center">
+                            </div>
+                            <div class="h-[29px] w-[1px] bg-[#E0DDDD]"></div>
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Фамилия" class="text-center">
+                            </div>
+    
+                        </div>
+    
+                        <div class="h-[1px] max-w-[347px] bg-[#0059DF] w-full"></div>
+                    </div>
+    
+    
+                    <div class="flex flex-col w-full items-center mt-[50px]">
+                        <div class="flex justify-center">
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Номер документа" class="text-center">
+                            </div>
+                            <div class="h-[29px] w-[1px] bg-[#E0DDDD]"></div>
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Телефон" class="text-center">
+                            </div>
+    
+                        </div>
+    
+                        <div class="h-[1px] max-w-[347px] bg-[#0059DF] w-full"></div>
+                    </div>
+    
+    
+                    <div class="flex flex-col w-full items-center mt-[50px]">
+                        <div class="flex justify-center">
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Пароль" class="text-center">
+                            </div>
+                            <div class="h-[29px] w-[1px] bg-[#E0DDDD]"></div>
+                            <div class="max-w-[174px] w-full  h-[35px] flex justify-center items-center">
+                                <input type="text" name="" id="" placeholder="Повтор пароля" class="text-center">
+                            </div>
+    
+                        </div>
+    
+                        <div class="h-[1px] max-w-[347px] bg-[#0059DF] w-full"></div>
+                    </div>
+    
+    
+                    <div class="max-w-[306px] w-full h-[64px] bg-[#0059DF] rounded-[33px] mt-[35px] flex justify-center items-center cursor-pointer"
+                        id="btnShadow">
+                        <span class="text-[20px] text-white font-medium">Зарегистрироваться</span>
+                    </div>
+    
+                    <div class="flex mt-[23px] justify-center items-center">
+                        <div class="h-[1px] w-[45px] bg-[#0059DF] opacity-70"></div>
+                        <span class="text-[10px] text-[#0059DF] font-light mx-[7px]">или</span>
+                        <div class="h-[1px] w-[45px] bg-[#0059DF] opacity-70"></div>
+                    </div>
+    
+                    <div>
+                        <span class="text-[#837676] text-[20px] font-extralight cursor-pointer">Уже Зарегистрированы?</span>
+                    </div>
+                </div>
+    
+    
+    
+            </main>
+    
+        </div>
+
+
+
+        <div class="wrapperAccountPage" id="buyticketPage">
+            <div class="bg-[#0059DF] w-full h-full">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer" onclick='changeScreen("MainPageOpen")'>
+                        <img class="max-w-[175px] max-h-[86px]" src="/img/logo.svg" alt="Logo" />
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Регистрация на рейс
+                            </p>
+                            <div class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Поиск
+                            </p>
+                            <div class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Личный кабинет
+                            </p>
+                            <div class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex w-full h-full justify-center items-center flex-col">
+                    <div class="flex bg-white max-w-[1210px] h-[565px] rounded-[68px] w-full items-center justify-center flex-col">
+    
+                        <div class="flex max-w-[949px] h-[133px] rounded-[29px] border-[2px] border-[#0059DF] w-full items-center justify-between"
+                            id="btnShadow">
+                            <div class="flex flex-col ml-[41px]">
+                                <span class="text-[#0E3877] text-[36px] font-normal">Рейс 68</span>
+                                <span class="text-[#0059DF] text-[20px] font-normal">22 ноября</span>
+                            </div>
+                            <div class="flex flex-col">
+    
+                                <div class="flex justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-[#0E3877] text-[24px] font-normal">Москва</span>
+                                        <span class="text-[#a9abad] text-[20px] font-normal">Vnukovo</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="text-[#0E3877] text-[24px] font-normal">Сургут</span>
+                                        <span class="text-[#a9abad] text-[20px] font-normal">Surgut</span>
+                                    </div>
+                                </div>
+    
+                                <div class="flex items-center">
+                                    <span class="text-[#0E3877] text-[20px] font-semibold">17:30 ----------------</span>
+                                    <span class="text-[#0E3877] text-[20px] font-normal">2ч.30мин</span>
+                                    <span class="text-[#0E3877] text-[20px] font-semibold">---------------- 20:00</span>
+                                </div>
+                            </div>
+    
+                            <div class="flex max-w-[255px] h-[91px] w-full rounded-[16px] border-b-[1px] border-[#0059DF] flex-col justify-center items-center mr-[15px]"
+                                id="btnShadow">
+                                <span class="text-[#0E3877] text-[24px] font-light">Стоимость: 20$</span>
+                                <span class="text-[#0E3877] text-[24px] font-light">Стоимость: 55%</span>
+                            </div>
+    
+    
+                        </div>
+                        <div class="flex w-full justify-around ">
+                            <div class="flex flex-col w-full mt-[123px] max-w-[470px]" id="Select-People">
+                                <div class="flex" id="countPeople">
+                                    <span class=" flex text-[#0E3877] font-medium text-[24px]">Пассажиры: 1</span>
+                                    <div class="flex max-w-[113px] h-[33px] w-full bg-[#0059DF] rounded-[7px] items-center justify-center cursor-pointer ml-[17px]" id="btnShadowAdd" onclick="createDiv()">
+                                        <span class="text-white font-bold text-[13px]">Добавить</span>
+                                    </div>
+                                </div>
+    
+                                <div class="flex max-w-[469px] w-full h-[48px] rounded-[11px] border-[2px] border-[#0059DF] items-center justify-between mt-[12px]">
+                                    <div class=" flex flex-col  max-w-[56px] w-full items-center justify-end mb-[10px] ml-[19px] mt-[5px]">
+                                     
+                                        <input type="text" class="text-[#cfcccc] font-medium text-[14px] max-w-[56px]" placeholder="Имя">
+                                        <div class="max-w-[56px] w-full h-[1px] bg-[#0059DF]"></div>
+                                    </div>
+                                   
+                                    <div class=" flex flex-col  max-w-[56px] w-full items-center justify-end mb-[10px] ml-[19px] mt-[5px]">
+                                        <input type="text" class="text-[#cfcccc] font-medium text-[14px] max-w-[63px]" placeholder="Фамилия">
+                                        <div class="max-w-[56px] w-full h-[1px] bg-[#0059DF]"></div>
+                                    </div>
+    
+                                    <div class=" flex flex-col  max-w-[84px] w-full items-center justify-end mb-[10px] ml-[19px] mt-[5px]">
+                                        <input type="text" class="text-[#cfcccc] font-medium text-[14px] max-w-[84px]" placeholder="Номер док-в">
+                                        <div class="max-w-[81px] w-full h-[1px] bg-[#0059DF]"></div>
+                                    </div>
+    
+                                    <div class=" flex flex-col  max-w-[56px] w-full items-center justify-end mb-[10px] ml-[19px] mt-[5px]">
+                                        <input type="text" class="text-[#cfcccc] font-medium text-[14px] max-w-[56px]" placeholder="Телефон">
+                                        <div class="max-w-[56px] w-full h-[1px] bg-[#0059DF]"></div>
+                                    </div>
+    
+                                   <div class="flex max-w-[74px] h-[22px] w-full rounded-[7px] border-[1px] border-[#ff0000] justify-center items-center cursor-pointer mr-[13px]" id="del-btn">
+                                    <span class="text-[12px] font-normal text-[#d60808]">Удалить</span>
+                                   </div>
+    
+                                </div>
+    
+    
+                        
+    
+    
+                                
+                            </div>
+    
+                            <div class="flex flex-col max-w-[376px] h-[177px] bg-white rounded-[34px] border-[1px] border-[#0059df] w-full items-center justify-center mt-[105px]" id="btnShadow">
+                                <div class="">
+                                    <span class="text-[32px] font-light text-[#0e3877]">Общая стоимость: 40$</span>
+                                </div>
+                                <div class="flex max-w-[304px] w-full h-[66px] rounded-[20px] bg-[#0059DF] justify-center items-center cursor-pointer" id="PlaceCheckOpen" onclick='changeScreen("PlaceCheckOpen")' > 
+                                 <span class="text-[30px] font-light text-white">Забронировать</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </main>
+          
+                
+            </div>
+            <footer class="flex h-full justify-end">
+                <div class="flex h-full items-end justify-center w-full">
+                    <div class="flex max-w-[1033px] w-full justify-between">
+                        <div>
+                            <span
+                                class="text-[20px] text-white font-extralight cursor-pointer"
+                                >Личный кабинет</span
+                            >
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Поиск</span>
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Регистрация на рейс </span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-[16px] text-white font-extralight">+7 (909) 876 2468</span>
+                            <div
+                                class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                            ></div>
+                            <span class="text-[16px] text-white font-extralight">SkyAngel@lines.com</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+
+        <div class="wrapperAccountPage" id="placeCheckPage">
+            <div class="bg-[#0059DF] w-full h-full">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer" onclick='changeScreen("MainPageOpen")'>
+                        <img class="max-w-[175px] max-h-[86px]" src="/img/logo.svg" alt="Logo" />
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Регистрация на рейс
+                            </p>
+                            <div class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Поиск
+                            </p>
+                            <div class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Личный кабинет
+                            </p>
+                            <div class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex w-full h-full justify-center items-center flex-col">
+                    <div class="flex bg-white max-w-[1210px] h-[565px] rounded-[68px] w-full items-center justify-center flex-col">
+    
+                        <div class="flex max-w-[949px] h-[133px] rounded-[29px] border-[2px] border-[#0059DF] w-full items-center justify-between"
+                            id="btnShadow">
+                            <div class="flex flex-col ml-[41px]">
+                                <span class="text-[#0E3877] text-[36px] font-normal">Рейс 68</span>
+                                <span class="text-[#0059DF] text-[20px] font-normal">22 ноября</span>
+                            </div>
+                            <div class="flex flex-col">
+    
+                                <div class="flex justify-between">
+                                    <div class="flex flex-col">
+                                        <span class="text-[#0E3877] text-[24px] font-normal">Москва</span>
+                                        <span class="text-[#a9abad] text-[20px] font-normal">Vnukovo</span>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span class="text-[#0E3877] text-[24px] font-normal">Сургут</span>
+                                        <span class="text-[#a9abad] text-[20px] font-normal">Surgut</span>
+                                    </div>
+                                </div>
+    
+                                <div class="flex items-center">
+                                    <span class="text-[#0E3877] text-[20px] font-semibold">17:30 ----------------</span>
+                                    <span class="text-[#0E3877] text-[20px] font-normal">2ч.30мин</span>
+                                    <span class="text-[#0E3877] text-[20px] font-semibold">---------------- 20:00</span>
+                                </div>
+                            </div>
+    
+                            <div class="flex max-w-[255px] h-[91px] w-full rounded-[16px] border-b-[1px] border-[#0059DF] flex-col justify-center items-center mr-[15px]"
+                                id="btnShadow">
+                                <span class="text-[#0E3877] text-[24px] font-light">Стоимость: 20$</span>
+                                <span class="text-[#0E3877] text-[24px] font-light">Стоимость: 55%</span>
+                            </div>
+    
+    
+                        </div>
+                        <div class="flex w-full justify-around ">
+                            <div class="flex flex-col w-full mt-[123px] max-w-[470px]">
+                                <div class="flex">
+                                    <span class=" flex text-[#0E3877] font-medium text-[24px]">Пассажиры: 2</span>
+                                  
+                                </div>
+    
+                                <div class="flex max-w-[469px] w-full h-[48px] rounded-[11px] border-[2px] border-[#0059DF] items-center justify-between mt-[12px]">
+                                 <span class="ml-[5px]">Широков Кирилл</span>
+                                 <span>Номер документа: 12353</span>
+                                 <span>+7-932-255-68-90</span>
+                                </div>
+    
+    
+                                <div class="flex max-w-[469px] w-full h-[48px] rounded-[11px] border-[2px] border-[#0059DF] items-center justify-between mt-[25px]">
+                                    <span class="ml-[5px]">Широков Кирилл</span>
+                                    <span>Номер документа: 12353</span>
+                                    <span>+7-932-255-68-90</span>
+                                </div>
+    
+    
+                                
+                            </div>
+    
+                            <div class="flex flex-col max-w-[376px] h-[177px] bg-white rounded-[34px] border-[1px] border-[#0059df] w-full items-center justify-center mt-[105px]" id="btnShadow">
+                                <div class="">
+                                    <span class="text-[32px] font-light text-[#0e3877]">Общая стоимость: 40$</span>
+                                </div>
+                                <div class="flex max-w-[304px] w-full h-[66px] rounded-[20px] bg-[#0059DF] justify-center items-center cursor-pointer" id="SelecePlaceOpen" onclick='changeScreen("SelecePlaceOpen")'> 
+                                 <span class="text-[30px] font-light text-white">Выбрать места</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </main>
+          
+                
+            </div>
+            <footer class="flex h-full justify-end">
+                <div class="flex h-full items-end justify-center w-full">
+                    <div class="flex max-w-[1033px] w-full justify-between">
+                        <div>
+                            <span
+                                class="text-[20px] text-white font-extralight cursor-pointer"
+                                >Личный кабинет</span
+                            >
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Поиск</span>
+                        </div>
+                        <div>
+                            <span class="text-[20px] text-white font-extralight cursor-pointer">Регистрация на рейс </span>
+                        </div>
+                        <div class="flex">
+                            <span class="text-[16px] text-white font-extralight">+7 (909) 876 2468</span>
+                            <div
+                                class="w-[1px] h-[18px] bg-[#063479] opacity-60 mx-[12px]"
+                            ></div>
+                            <span class="text-[16px] text-white font-extralight">SkyAngel@lines.com</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+
+        <div class="wrapperAccountPage" id="SelectPlacePage">
+            <div class="bg-[#0059DF] w-full h-full">
+                <header class="flex justify-between items-center">
+                    <div class="mt-[28px] ml-[15px] cursor-pointer" onclick='changeScreen("MainPageOpen")'>
+                        <img class="max-w-[175px] max-h-[86px]" src="/img/logo.svg" alt="Logo" />
+                    </div>
+                    <div class="flex gap-[63px] mr-[66px]">
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Регистрация на рейс
+                            </p>
+                            <div class="max-w-[139px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Поиск
+                            </p>
+                            <div class="max-w-[42px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+    
+                        <div class="flex flex-col items-center">
+                            <p class="text-white text-[20px] font-medium cursor-pointer">
+                                Личный кабинет
+                            </p>
+                            <div class="max-w-[140px] h-[1px] w-full bg-white mt-[10px]"></div>
+                        </div>
+                    </div>
+                </header>
+                <main class="flex w-full items-center flex-col">
+    
+                    <div class="w-full">
+                        <span class="text-[48px] font-bold text-white flex justify-center">Выберите Места</span>
+                    </div>
+                    <div class="flex max-w-[774px] w-full ">
+                        <div class="flex w-full mt-[21px]">
+                            <div class="w-full flex justify-between max-w-[774px] ">
+                                <div class="flex flex-col">
+                                    <div class="flex max-w-[176px] w-full h-[140px] bg-white rounded-[18px] flex-col">
+    
+                                        <div class="flex items-center  w-full ml-[15px] mt-[15px]">
+                                            <div class="w-[20px] h-[20px] rounded-[5px] bg-[#D9D9D9]" id="btnShadow"></div>
+                                            <span class="text-[24px] font-light text-[#7E7878] ml-[14px]">Свободно</span>
+                                        </div>
+    
+                                        <div class="flex items-center  w-full ml-[15px]">
+                                            <div class="w-[20px] h-[20px] rounded-[5px] bg-black" id="btnShadow"></div>
+                                            <span class="text-[24px] font-light text-[#7E7878] ml-[14px]">Занято</span>
+                                        </div>
+    
+                                        <div class="flex items-center  w-full ml-[15px]">
+                                            <div class="w-[20px] h-[20px] rounded-[5px] bg-[#D9D9D9] border-[#0059DF] border-[1px] rounded-[5px]"
+                                                id="btnShadow"></div>
+                                            <span class="text-[24px] font-light text-[#7E7878] ml-[14px]">Выбрано</span>
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="flex max-w-[176px] w-full h-[59px] rounded-[33px] bg-white justify-center items-center mt-[52px] cursor-pointer">
+                                        <span class="text-[#0059DF] font-bold text-[20px]">Продолжить</span>
+                                    </div>
+                                </div>
+    
+    
+                                <div class="flex flex-col max-w-[198px] w-full">
+                                    <span class="text-white text-[20px] font-semibold">Пассажиры</span>
+                                    <div class="h-[1px] max-w-[198px] w-full bg-white"></div>
+    
+                                    <div
+                                        class="flex w-full h-[52px] bg-white rounded-[7px] mt-[20px] items-center justify-center">
+                                        <span class="text-black text-[13px] font-bold">Широков Кирилл</span>
+                                        <div
+                                            class="flex max-w-[70px] w-full h-[24px] rounded-[7px] bg-[#0059DF] items-center justify-center ml-[5px] cursor-pointer">
+                                            <span class="text-white text-[10px] font-bold">Добавить</span>
+                                        </div>
+                                    </div>
+    
+                                    <div
+                                        class="flex w-full h-[52px] bg-white rounded-[7px] mt-[20px] items-center justify-center mt-[16px]">
+                                        <span class="text-black text-[13px] font-bold">Широков Кирилл</span>
+                                        <div
+                                            class="flex max-w-[70px] w-full h-[24px] rounded-[7px] bg-[#0059DF] items-center justify-center ml-[5px] cursor-pointer">
+                                            <span class="text-white text-[10px] font-bold">Добавить</span>
+                                        </div>
+                                    </div>
+    
+                                    <div
+                                        class="flex w-full h-[52px] bg-white rounded-[7px] mt-[20px] items-center justify-center mt-[16px]">
+                                        <span class="text-black text-[13px] font-bold">Широков Кирилл</span>
+                                        <div
+                                            class="flex max-w-[70px] w-full h-[24px] rounded-[7px] bg-[#0059DF] items-center justify-center ml-[5px] cursor-pointer">
+                                            <span class="text-white text-[10px] font-bold">Добавить</span>
+                                        </div>
+                                    </div>
+    
+                                </div>
+    
+                                <div
+                                    class="bg-[url('img/air.svg')] max-w-[170px] h-[562px] w-full flex justify-between">
+                                    <div class="flex flex-col mt-[64px] ml-[5px]">
+                                        <div class="flex">
+                                            <span class="text-[20px] font-bold text-[black]">A</span>
+                                            <span class="text-[20px] font-bold text-[black] ml-[6px]">B</span>
+                                        </div>
+    
+                                        <div class="flexSelect">
+                                            <div class="cube" id="1"></div>
+                                            <div class="cubetwo"
+                                                id="2">
+                                            </div>
+                                        </div>
+    
+                                        <div class="flexSelect">
+                                            <div class="cube" id="1"></div>
+                                            <div class="cubetwo"
+                                                id="2">
+                                            </div>
+                                        </div>
+    
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="3"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="4"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                    </div>
+    
+    
+                                    <div class="flex flex-col mt-[103px]">
+                                        <span class="text-[15px] font-semibold text-black">1</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">2</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">3</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">4</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">5</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">6</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">7</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">8</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[6px]">9</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">10</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">11</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">12</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[6px]">13</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">14</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">15</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">16</span>
+                                        <span class="text-[15px] font-semibold text-black mt-[3px]">17</span>
+    
+                                    </div>
+                                    <div class="flex flex-col mt-[64px] mr-[8px]">
+                                        <div class="flex">
+                                            <span class="text-[20px] font-bold text-[black]">С</span>
+                                            <span class="text-[20px] font-bold text-[black] ml-[6px]">D</span>
+                                        </div>
+    
+                                        <div class="flex mt-[10px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+    
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+    
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                        <div class="flex mt-[11px]">
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px]" id="btnShadow"></div>
+                                            <div class="w-[15px] h-[15px] bg-[#D9D9D9] rounded-[5px] ml-[6px]"
+                                                id="btnShadow">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+    
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+
+
+
+            <script src="btn.js"></script>
+        <script src="/openPage.js"></script>
+         <script src="/movePage.js"></script>
+         <script src="CheckAccount.js"></script>
+         <script src="SelectPlace.js"></script>
+          
+    </body>
+
+
+
+
+   
+
+
+
+  
+</html>
+
+
